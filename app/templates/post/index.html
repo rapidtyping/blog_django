@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Post</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th> Titulo </th>
+			<th> Texto  </th>
+			<th></th>
+			<th></th>
+		</tr>
+	{% for post in posts %}
+		<tr>
+			<td>{{ post.titulo }}</td>
+			<td>{{ post.contenido }}</td>
+			<td> Hace {{ post.creado | timesince }}</td>
+			<td><a href="/post/{{ post.pk }}">Show</a></td>
+		</tr>
+	{% endfor %}
+	</table>
+</body>
+</html>
